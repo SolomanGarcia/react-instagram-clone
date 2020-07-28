@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Post from "./Post";
 
 function App() {
+  // State
+  const [posts, setPosts] = useState([
+    {
+      username: "solocode",
+      caption: "Wow! It works!",
+      imageUrl:
+        "https://www.freecodecamp.org/news/content/images/size/w600/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png"
+    },
+    {
+      username: "solocode",
+      caption: "Wow! It works!",
+      imageUrl:
+        "https://www.freecodecamp.org/news/content/images/size/w600/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png"
+    }
+  ]);
+
   return (
     <div className="app">
       <div className="app__header">
@@ -15,21 +31,13 @@ function App() {
 
       <h1>Hello World!</h1>
 
-      <Post
-        username="solocode"
-        caption="Wow! It works!"
-        imageUrl="https://www.freecodecamp.org/news/content/images/size/w600/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png"
-      />
-      <Post
-        username="mouthbreather81"
-        caption="That Rocks!"
-        imageUrl="https://www.freecodecamp.org/news/content/images/size/w600/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png"
-      />
-      <Post
-        username="erose14"
-        caption="Hello World!"
-        imageUrl="https://www.freecodecamp.org/news/content/images/size/w600/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png"
-      />
+      {posts.map((post) => (
+        <Post
+          username={post.username}
+          caption={post.caption}
+          imageUrl={post.imageUrl}
+        />
+      ))}
     </div>
   );
 }
