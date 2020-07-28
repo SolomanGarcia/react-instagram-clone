@@ -15,7 +15,11 @@ function App() {
 
       <h1>Hello World!</h1>
 
-      <Post />
+      <Post
+        username="solocode"
+        caption="Wow! It works!"
+        imageUrl="https://www.freecodecamp.org/news/content/images/size/w600/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png"
+      />
       <Post />
       <Post />
     </div>
