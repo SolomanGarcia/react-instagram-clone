@@ -20,8 +20,16 @@ function App() {
         caption="Wow! It works!"
         imageUrl="https://www.freecodecamp.org/news/content/images/size/w600/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png"
       />
-      <Post />
-      <Post />
+      <Post
+        username="mouthbreather81"
+        caption="That Rocks!"
+        imageUrl="https://www.freecodecamp.org/news/content/images/size/w600/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png"
+      />
+      <Post
+        username="erose14"
+        caption="Hello World!"
+        imageUrl="https://www.freecodecamp.org/news/content/images/size/w600/2020/02/Ekran-Resmi-2019-11-18-18.08.13.png"
+      />
     </div>
   );
 }
