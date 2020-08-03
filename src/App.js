@@ -48,14 +48,6 @@ function App() {
         // User has logged in
         console.log(authUser);
         setUser(authUser);
-
-        if (authUser.displayName) {
-          // Dont update username
-        } else {
-          return authUser.updateProfile({
-            displayName: username
-          });
-        }
       } else {
         // User has logged out
         setUser(null);
@@ -86,6 +78,11 @@ function App() {
 
     auth
       .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        return authUser.user.updateProfile({
+          displayName: username
+        });
+      })
       .catch((error) => alert(error.message));
   };
 
