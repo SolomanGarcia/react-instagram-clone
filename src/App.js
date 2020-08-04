@@ -104,12 +104,6 @@ function App() {
 
   return (
     <div className="app">
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName} />
-      ) : (
-        <h3>Sorry, you need to login to upload</h3>
-      )}
-
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className="app__signup">
@@ -191,8 +185,6 @@ function App() {
         </div>
       )}
 
-      <h1>Hello World!</h1>
-
       {posts.map(({ id, post }) => (
         <Post
           key={id}
@@ -201,6 +193,12 @@ function App() {
           imageUrl={post.imageUrl}
         />
       ))}
+
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ) : (
+        <h3>Sorry, you need to login to upload</h3>
+      )}
     </div>
   );
 }
