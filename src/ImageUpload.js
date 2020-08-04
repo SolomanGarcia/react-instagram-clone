@@ -45,6 +45,10 @@ function ImageUpload({ username }) {
               imageUrl: url,
               username: username
             });
+
+            setProgress(0);
+            setCaption("");
+            setImage(null);
           });
       }
     );
@@ -52,6 +56,7 @@ function ImageUpload({ username }) {
 
   return (
     <div>
+      <progress value={progress} max="100"></progress>
       {/* Caption input */}
       <input
         type="text"
