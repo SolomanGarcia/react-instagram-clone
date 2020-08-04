@@ -57,7 +57,11 @@ function ImageUpload({ username }) {
 
   return (
     <div className="imageupload">
-      <progress value={progress} max="100"></progress>
+      <progress
+        className="imageupload__progress"
+        value={progress}
+        max="100"
+      ></progress>
       {/* Caption input */}
       <input
         type="text"
