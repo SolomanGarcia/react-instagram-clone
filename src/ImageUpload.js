@@ -6,6 +6,14 @@ function ImageUpload() {
   const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState("");
 
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
+  const handleUpload = () => {};
+
   return (
     <div>
       {/* Caption input */}
@@ -13,7 +21,7 @@ function ImageUpload() {
         type="text"
         placeholder="Enter a caption..."
         onChange={(event) => setCaption(event.target.value)}
-        value={}
+        value={caption}
       />
       {/* File picker */}
       <input type="file" onChange={handleChange} />
