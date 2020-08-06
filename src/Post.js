@@ -24,6 +24,8 @@ function Post({ postId, username, caption, imageUrl }) {
     };
   }, [postId]);
 
+  const postComment = (event) => {};
+
   return (
     <div className="post">
       <div className="post__header">
@@ -49,6 +51,14 @@ function Post({ postId, username, caption, imageUrl }) {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
+        <button
+          className="post__button"
+          disabled={!comment}
+          type="submit"
+          onClick={postComment}
+        >
+          Post
+        </button>
       </form>
     </div>
   );
