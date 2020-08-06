@@ -5,6 +5,7 @@ import { db } from "./firebase";
 
 function Post({ postId, username, caption, imageUrl }) {
   const [comments, setComments] = useState([]);
+  const [comment, setComment] = useState("");
 
   useEffect(() => {
     let unsubscribe;
@@ -39,6 +40,16 @@ function Post({ postId, username, caption, imageUrl }) {
         <strong>{username}: </strong>
         {caption}
       </h4>
+
+      <form className="post__commentBox">
+        <input
+          className="post__input"
+          type="text"
+          placeholder="Add a comment..."
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
+      </form>
     </div>
   );
 }
