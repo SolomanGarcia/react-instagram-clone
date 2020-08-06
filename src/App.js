@@ -217,7 +217,9 @@ function App() {
       {user?.displayName ? (
         <ImageUpload username={user.displayName} />
       ) : (
-        <h3>Sorry, you need to login to upload</h3>
+        <div className="app__signup_warning">
+          <h3>Sorry, you need to login to upload and comment on post</h3>
+        </div>
       )}
     </div>
   );

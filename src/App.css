@@ -36,3 +36,8 @@
   display: flex;
   flex-direction: column;
 }
+
+.app__signup_warning {
+  text-align: center;
+  margin-bottom: 20px;
+}
